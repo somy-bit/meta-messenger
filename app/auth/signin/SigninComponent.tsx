@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import {getProviders,signIn} from 'next-auth/react'
 
 type Props={
@@ -9,16 +9,31 @@ type Props={
 }
 
 
-function SigninComponent({providers}:Props) {
+function SigninComponent() {
+
+  const [providers,setProviders] = useState<Awaited<ReturnType<typeof getProviders>>>(null);
+
+  useEffect(()=>{
+
+    const getProv = async()=>{
+
+       const provid = await getProviders();
+       console.log('providers>>>>>>>>>>>>>>>',provid)
+       setProviders(provid)
+
+    }
+    getProv();
+
+  },[])
   return (
     <div>
-      {Object.values(providers!).map(provider=>
+      {providers && Object.values(providers!).map(provider=>
       (
       <div className='' key={provider.name}>
         <button
              className='p-4 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-400'
              onClick={()=>signIn(provider.id,
-            {callbackUrl:'http://localhost:3000'||process.env.VERCEL_URL})}>sign in with {provider.name}</button>
+            {callbackUrl:'http://127.0.0.1:3000'})}>sign in with {provider.name}</button>
       </div>
       )
       )}
