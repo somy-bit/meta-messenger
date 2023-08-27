@@ -6,7 +6,7 @@ const nextConfig = {
   }
   ,
   images:{
-    domains:['links.papareact.com','platform-lookaside.fbsbx.com','github.com']
+    domains:['links.papareact.com','platform-lookaside.fbsbx.com','avatars.githubusercontent.com']
   }
 }
 
