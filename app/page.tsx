@@ -10,7 +10,7 @@ export default async function Home() {
 
     const session = await getServerSession();
 
-    const data = await fetch('http://127.0.0.1:3000/api/getMesseges')
+    const data = await fetch(process.env.VERCEL_URL ||'http://127.0.0.1:3000'+'/api/getMesseges')
         .then(res => res.json())
 
     const messegs: Message[] = data.messeges;
