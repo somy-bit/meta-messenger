@@ -29,7 +29,7 @@ export default async function handler(
  await redis.hset("messeges",mesage.id,JSON.stringify(newMessege))
  serverPusher.trigger('messeges','new messege',newMessege)
 
-  res.status(200).json({message: newMessege})
+ return  res.status(200).json({message: newMessege})
 }
 
 

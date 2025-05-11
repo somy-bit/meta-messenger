@@ -45,7 +45,7 @@ export default function MessegesList({initialMesseges} :Props) {
     return (
         <div className='space-y-4 pt-5 pb-32 max-w-4xl mx-auto'>
 
-            {
+            { initialMesseges.length>0 &&
                 (allMesseges || initialMesseges).map(msg =>
                     <MessegeComponent key={msg.id} messege={msg} />
                 )

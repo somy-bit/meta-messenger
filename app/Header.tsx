@@ -23,7 +23,7 @@ export default async  function Header() {
 
     return (
         <header className='sticky top-0 bg-white flex 
-                     justify-center items-center shadow-sm p-10'>
+                     justify-center items-center shadow-lg p-6'>
             <div className='flex flex-col items-center space-y-5'>
                 <div className='flex items-center space-x-2'>
                     <Image width={50} height={10}
@@ -31,7 +31,7 @@ export default async  function Header() {
                         className=' object-cover' alt='meta' />
                     <p className='text-blue-400'>welcome to meta messenger</p>
                 </div>
-                <Link className='bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-md' href='/auth/signin'>Sign In</Link>
+                {/* <Link className='bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-md' href='/auth/signin'>Sign In</Link> */}
             </div>
         </header>
     )

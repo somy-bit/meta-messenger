@@ -9,11 +9,18 @@ import { getServerSession } from 'next-auth/next'
 export default async function Home() {
 
     const session = await getServerSession();
-
-    const data = await fetch('https://meta-messenger-9uutxbnnt-smmoosavism-gmailcom.vercel.app/api/getMesseges')
+console.log("session .....",session)
+var messegs :Message[]=[]
+try{
+   const data = await fetch(process.env.FETCH_URL!)
         .then(res => res.json())
+         messegs = data.messeges;
+}catch(error){
+    console.log("error","........................"+error)
+}
+ 
 
-    const messegs: Message[] = data.messeges;
+    
     return (
         <Provider session={session!}>
             <main>
