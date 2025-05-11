@@ -33,7 +33,7 @@ function SigninComponent() {
           <button
             className='p-4 bg-blue-700 text-white rounded-lg font-semibold mb-6  hover:bg-blue-400'
             onClick={() => signIn(provider.id,
-              { callbackUrl: 'https://localhost:3000' })}>
+              { callbackUrl: process.env.BASE_URL })}>
               sign in with {provider.name}
           </button>
         </div>
