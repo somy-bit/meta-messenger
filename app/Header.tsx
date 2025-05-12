@@ -9,8 +9,8 @@ export default async  function Header() {
     const session = await getServerSession()
 
     if (session) return (
-        <header className='sticky top-0 z-50 bg-green-300 flex 
-             justify-between items-center shadow-sm p-10'>
+        <header className='sticky top-0 z-50 bg-gray-200 flex 
+             justify-between items-center shadow-sm px-10 py-4'>
                 
                 <div className='flex items-center space-x-2'>
                     <Image src={session.user?.image||'https://links.papareact.com/jne'} alt='user' 

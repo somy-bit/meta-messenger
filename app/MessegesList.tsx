@@ -43,7 +43,7 @@ export default function MessegesList({initialMesseges} :Props) {
     }, [allMesseges, mutate])
 
     return (
-        <div className='space-y-4 pt-5 pb-32 max-w-4xl mx-auto min-h-screen'>
+        <div className='space-y-4 pt-5 pb-32 max-w-3xl bg-white mx-auto min-h-screen'>
 
             { initialMesseges.length>0 &&
                 (allMesseges || initialMesseges).map(msg =>

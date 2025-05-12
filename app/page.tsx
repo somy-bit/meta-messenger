@@ -8,11 +8,12 @@ import { getServerSession } from 'next-auth/next'
 
 export default async function Home() {
 
+
     const session = await getServerSession();
 console.log("session .....",session)
 var messegs :Message[]=[]
 try{
-   const data = await fetch(process.env.FETCH_URL!)
+   const data = await fetch(`${process.env.BASE_URL!}/api/getMesseges`)
         .then(res => res.json())
          messegs = data.messeges;
 }catch(error){
