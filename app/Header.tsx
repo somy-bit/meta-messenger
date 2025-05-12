@@ -9,7 +9,7 @@ export default async  function Header() {
     const session = await getServerSession()
 
     if (session) return (
-        <header className='sticky top-0 z-50 bg-white flex 
+        <header className='sticky top-0 z-50 bg-green-300 flex 
              justify-between items-center shadow-sm p-10'>
                 
                 <div className='flex items-center space-x-2'>
