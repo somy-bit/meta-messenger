@@ -12,11 +12,16 @@ type Props = {
 function SigninComponent() {
 
   const [providers, setProviders] = useState<Awaited<ReturnType<typeof getProviders>>>(null);
+  const [homeUrl,setHomeUrl] = useState('')
 
-  const homeUrl = `${window.location.origin}`
+  
   useEffect(() => {
 
     const getProv = async () => {
+
+      if(typeof window !== 'undefined'){
+        setHomeUrl(`${window.location.origin}/`)
+      }
 
       const provid = await getProviders();
       console.log('providers>>>>>>>>>>>>>>>', provid)
